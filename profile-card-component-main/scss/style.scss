@@ -1,0 +1,95 @@
+﻿$cyantoi:hsl(185, 75%, 39%);
+$cyantoivl: hsl(229, 23%, 23%);
+$xanhtoi: hsl(227, 10%, 46%) ;
+$xamtoi: hsl(0, 0%, 59%) ;
+@mixin setscale($width,$height){
+    width:$width;
+    height:$height;
+}
+body {
+    background-image: url("../images/bg-pattern-top.svg"),url("../images/bg-pattern-bottom.svg");
+    background-color: $cyantoi;
+    height: 551px;
+
+    font: {
+        family: "Kumbh Sans",sanserif;
+    }
+}
+#container {
+    position: relative;
+    @include setscale(95%,70%);
+    border-radius: 10px;
+    background-color: white;
+    margin: auto;
+    top: 25%;
+    overflow: hidden;
+
+    img {
+        @include setscale(100%,35%);
+    }
+
+    .infomation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        @include setscale(150px,30%);
+        padding: 20% 25%;
+        text-align: center;
+        img {
+            @include setscale(60%,85%);
+            display: block;
+            border-radius: 50px;
+            border: 5px solid white;
+            margin:auto;
+        }
+
+        h1 {
+            font-size: large;
+            display: inline;
+        }
+
+        h3 {
+            font-size: medium;
+            display: inline;
+            color: grey;
+        }
+
+        p {
+            color: grey;
+        }
+
+        .detail {
+            margin-top: 20px;
+        }
+    }
+
+    .interaction {
+        margin-top: 50%;
+        border: 1px solid lightgrey;
+    }
+
+    ul {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        padding: 0;
+    }
+
+    li {
+        display: inline;
+        text-align: center;
+
+        p {
+            font-size: 10px;
+            color: grey;
+        }
+    }
+}
+@media screen and (min-width:1024px){
+    #container{
+        @include setscale(25%,75%);
+    }
+}
+
